@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Explore Italia</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav>
+        <a href="#" class="logo">Travel</a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Tours</a></li>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <img src="./img/menu-svgrepo-com.svg" alt="" class="menu-btn">
+    </nav>
+    <header>
+        <div class = "header-content">
+            <h2> Explore Italy</h2>
+            <div class = "line"></div>
+            <h1> RICH HISTORY & NATURAL BEAUTY</h1>
+            <a href="#" class="ctn">Learn More</a>
+        </div>
+    </header>
+    <section class="events">
+        <div class="title">
+            <h1>Wonderful Architecture</h1>
+            <div class="line"></div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <video id="VeniceVid" src="./img/venizia.mov" muted loop></video>
+                <h4> Venice </h4>
+                <p id="description"> This city showcases the enginuity and perseverence Venezian people.</p>
+                <a href="#" class="ctn">Learn More</a>
+            </div>
+            <div class="col">
+                <video id="comoVid" src="./img/como.mov" muted loop></video>
+                <h4>Lake Como</h4>
+                <p id="description">One of the greenest, most iconic lakes in Italy.</p>
+                <a href="#" class="ctn">Learn More</a>
+            </div>
+        </div>
+    </section>
+    <section class="explore">
+        <div class="explore-content">
+            <h1> SPECTACULAR VIEWS</h1>
+            <div class = "line"></div>
+            <p>Experience stunnings views from your bedroom, hotels and airbnbs prioritize views to maximize its appeal.</p>
+            <a href="#" class="ctn">Learn More</a>
+        </div>
+    </section>
+    <section class="tours">
+        <div class="row">
+            <div class="col content-col">
+                <h1> TOURS & DESTINATIONS</h1>
+                <div class = "line"></div>
+                <p id="description"> Tours of all kinds available ranging from food tours, vertical train rides, visiting old churches, iconic sculptures, etc.</p>
+                <a href="#" class="ctn">Learn More</a>
+            </div>
+            <div class="col image-col">
+                <div class="image-gallery">
+                    <img src="./img/tiramisu.png" alt="">
+                    <img src="./img/vert-train.png" alt="">
+                    <img src="./img/duommo.png" alt="">
+                    <img src="./img/david.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <p>Copyright © 2024 Explore Italia</p>
+    </section>
+    <script>
+        const menuBtn = document.querySelector('.menu-btn')
+        const navlinks = document.querySelector('.nav-links')
+        
+        menuBtn.addEventListener('click', ()=>{
+            navlinks.classList.toggle('mobile-menu')
+        })
+    </script>
+</body>
+</html>

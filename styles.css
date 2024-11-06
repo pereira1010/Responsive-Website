@@ -1,0 +1,435 @@
+/* styles.css */
+/* Google Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Global */
+*  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: 'Bodoni Moda';
+}
+
+body , html {
+    overflow-x: hidden;
+    background: #ffffff;
+    min-height: 200vh;
+}
+
+/* Navbar */
+/* Navbar Styling */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px 100px;
+    transition: 0.6s;
+    align-items: center;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.8); /* Slightly transparent background */
+}
+
+nav::before, nav::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background: rgb(203, 184, 110); /* Gold color for decorative line */
+    left: 0;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+nav::before {
+    top: 0;
+}
+
+nav::after {
+    bottom: 0;
+}
+
+nav .logo {
+    position: relative;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 2em;
+    letter-spacing: 2px;
+    transition: 0.6s;
+    z-index: 2; /* Ensure it's above the pseudo-elements */
+}
+
+nav ul {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; /* Ensure it's above the pseudo-elements */
+}
+
+nav ul li {
+    position: relative;
+    list-style: none;
+    overflow: hidden; /* Ensures pseudo-elements do not overflow the li */
+}
+
+nav ul li::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgb(224, 98, 20); /* Orange line under nav items */
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+nav ul li:hover::before {
+    transform: scaleX(1); /* Expand the underline on hover */
+}
+
+nav ul li a {
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: rgb(128, 94, 0); 
+    transition: color 0.5s;
+}
+
+nav ul li a:hover {
+    color: rgb(224, 98, 20); 
+}
+
+nav ul li a:active {
+    box-shadow: 0.125rem 0.125rem 0.3rem maroon;
+    border-radius: 0.35rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Sticky Navbar Styling */
+nav.sticky {
+    padding: 5px 100px;
+    background: #ffffffe7;
+}
+
+nav.sticky .logo,
+nav.sticky ul li a {
+    color: #000;
+}
+
+/* Link States */
+a:link {
+    color: rgb(128, 94, 0);
+}
+
+a:visited {
+    color: blueviolet;
+}
+
+a:focus {
+    outline: none;
+}
+header {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./img/vatican.png');
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+} 
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 0;
+}
+.header-content {
+    margin-bottom: 150px;
+    color: whitesmoke;
+    text-align: center;
+    z-index: 2;
+}
+.header-content h2 {
+    font-size: 4vmin;
+}
+.line {
+    width: 150px;
+    height: 4px;
+    background: #fc036b;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+.header-content h1 {
+    font-size: 7vmin;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.ctn {
+    padding: 8px 15px;
+    background: #fc036b;
+    border-radius: 30px;
+    color: whitesmoke;
+    text-decoration: none;
+}
+.menu-btn,.close-btn{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 30px;
+    cursor: pointer;
+    display: none;
+}
+/* Events */
+section {
+    width: 80%;
+    margin: 80px auto;
+}
+.title {
+    text-align: center;
+    font-size: 4vmin;
+    color: #49497e;
+}
+.row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+.row .col  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.events .row {
+    margin-top: 50px;
+}
+h4 {
+    font-size: 3vmin;
+    color: #484872;
+    margin: 20px auto;
+}
+p {
+    color: #7c7c7c;
+    padding: 0px 40px;
+}
+.events .ctn {
+    margin-top: 30px;
+}
+
+.events .col video {
+    width: 100%;
+    max-width: 300px; /* Adjust this width to make images the same size */
+    height: 200px; /* Set a fixed height for uniformity */
+    object-fit: cover; /* Ensures the image fills the dimensions without distortion */
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+.explore {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('./img/revello.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;   
+}
+.explore::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 0; /* Ensure it's behind the content */
+}
+.explore-content {
+    position: relative;
+    width: 60%;
+    padding: 50px;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+}
+.explore-content h1 {
+    font-size: 7vmin;
+}
+.explore-content .line{
+    margin-bottom: 50px;
+}
+.explore-content p {
+    color: whitesmoke;
+}
+.explore-content .ctn {
+    margin-top: 40px;
+}
+.tours .row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between; 
+}
+.content-col {
+    width: 40%; 
+    margin-right: 20px;
+}
+.image-col {
+    width: 60%; 
+    display: block;
+    position: relative; 
+}
+.tours .image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+    width: 100%;
+    align-items: center;
+}
+
+.image-gallery img {
+    width: 100%;
+    max-width: 250px; /* Controls the maximum width of images */
+    border-radius: 8px; /* Optional: adds rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.content-col h1{
+    font-size: 7vmin;
+    color: #484872;
+}
+.content-col .line {
+    margin-left: -1px;
+}
+.content-col p {
+    padding: 0;
+    margin: 30px auto;
+}
+.content-col .ctn {
+    margin-left: -100px;
+}
+
+.footer {
+    width: 100%;
+    min-height: 100px;
+    padding: 20px 80px;
+    margin: 0;
+    background: #484872;
+    text-align: center;
+}
+.footer p {
+    color: whitesmoke;
+    margin: 20px auto;
+}
+#description::highlight {
+    background-color: yellow; /* Custom background for highlighted text */
+    color: black; /* Custom text color for highlighted content */
+}
+
+/* Fallback for browsers that do not support ::highlight */
+#description::selection {
+    background: yellow;
+    color: black;
+}
+
+
+/* Mobile device */
+@media only screen and (max-width:850px){
+    .menu-btn {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    .nav {
+        padding: 0;
+    }
+    .logo {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+    }
+    .nav-links {
+        flex-direction: column;
+        width: 30%;
+        height: 100vh;
+        justify-content: center;
+        
+        margin-top: -900px;
+        transition: all 0.5s ease;
+    }
+    .mobile-menu {
+        margin-top: 0px;
+        
+    }
+    .nav-links li {
+        margin: 30px auto;
+    }
+    /* Events */
+    .row {
+        flex-direction: column;
+    }
+    .row .col {
+        margin: 20px auto;
+    }
+    .col img {
+        max-width: 75%;
+    }
+    /* explore */
+    .explore-content {
+        width: 100%;
+    }
+    .tours .col {
+        width: 100%;
+    }
+    .image-gallery {
+        justify-content: center;
+        align-items: center;
+    }
+    .image-gallery img {
+        width: 75%;
+    }
+    .footer {
+        padding: 10px;
+    }
+}
+
+/* Pseudo Elements and Visual effects */
+img {
+    transition: transform .3s ease;
+}
+img:hover {
+    transform: scale(1.1);
+}
+video {
+    transition: transform .3s ease;
+}
+video:hover {
+    transform: scale(1.1);
+}
+.ctn:hover {
+    background: whitesmoke;
+    color: #fc036b;
+    box-shadow: 2px 2px 5px #00000056;
+}
+li:hover {
+    color: #ff006a;
+    cursor: pointer;
+}
